@@ -1,0 +1,121 @@
+[
+  {
+    "animalId": "panthera-tigris",
+    "name": "Tiger",
+    "description": "The tiger (Panthera tigris) is the largest extant cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange-brown fur with a lighter underside. It is an apex predator, primarily preying on ungulates such as deer and wild boar. It is territorial and generally a solitary but social predator, requiring large contiguous areas of habitat, which support its requirements for prey and rearing of its offspring. Tiger cubs stay with their mother for about two years, before they become independent and leave their mother's home range to establish their own. <br><br>(From <a href=\"https://en.wikipedia.org/wiki/Tiger\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/41/Siberischer_tiger_de_edit02.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "panthera-leo",
+    "name": "Lion",
+    "description": "The lion is a species in the family Felidae; it is a muscular, deep-chested cat with a short, rounded head, a reduced neck and round ears, and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions have a prominent mane, which is the most recognisable feature of the species. With a typical head-to-body length of 184–208 cm (72–82 in) they are larger than females at 160–184 cm (63–72 in). It is a social species, forming groups called prides. A lion pride consists of a few adult males, related females and cubs. Groups of female lions usually hunt together, preying mostly on large ungulates. The lion is an apex and keystone predator, although some lions scavenge when opportunities occur, and have been known to hunt humans, although the species typically does not. .<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Lion\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Lion_d%27Afrique.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "equus-quagga",
+    "name": "Zebra",
+    "description": "Zebras are several species of African equids (horse family) united by their distinctive black-and-white striped coats. Their stripes come in different patterns, unique to each individual. They are generally social animals that live in small harems to large herds. Unlike their closest relatives, horses and donkeys, zebras have never been truly domesticated. .<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Coriander\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Equus_zebra_hartmannae_-_Etosha_2015.jpg",
+    "habitat": "Herbivorous"
+  },
+  {
+    "animalId": "vulpes-vulpes",
+    "name": "Fox",
+    "description": "Foxes are small to medium-sized, omnivorous mammals belonging to several genera of the family Canidae. Foxes have a flattened skull, upright triangular ears, a pointed, slightly upturned snout, and a long bushy tail (or brush).<br><br>The tomato is consumed in diverse ways, raw or cooked, in many dishes, sauces, salads, and drinks. While tomatoes are fruits – botanically classified as berries – they are commonly used as a vegetable ingredient or side dish.<br><br>Numerous varieties of the tomato plant are widely grown in temperate climates across the world, with greenhouses allowing for the production of tomatoes throughout all seasons of the year. Tomato plants typically grow to 1–3 meters (3–10 ft) in height. They are vines that have a weak stem that sprawls and typically needs support. Indeterminate tomato plants are perennials in their native habitat, but are cultivated as annuals. Determinate, or bush, plants are annuals that stop growing at a certain height and produce a crop all at once. The size of the tomato varies according to the cultivar, with a range of 0.5–4 inches (1.3–10.2 cm) in width.<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Tomato\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/ArcticFoxSummer.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "canis-aureus",
+    "name": "Golden Jackal",
+    "description": "The golden jackal is a wolf-like canid that is native to Southeast Europe, Southwest Asia, South Asia, and regions of Southeast Asia. Compared with the Arabian wolf, which is the smallest of the gray wolves (Canis lupus), the jackal is smaller and possesses shorter legs, a shorter tail, a more elongated torso, a less-prominent forehead, and a narrower and more pointed muzzle. The golden jackal's coat can vary in color from a pale creamy yellow in summer to a dark tawny beige in winter. It is listed as Least Concern on the IUCN Red List due to its widespread distribution and high density in areas with plenty of available food and optimum shelter. .<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Golden_jackal\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Golden_Jackal_or_Indian_Jackal%2C_canis_aureus_indicus.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "crocodylus-porosus",
+    "name": "Crocodile",
+    "description": "Crocodiles (subfamily Crocodylinae) or true crocodiles are large semiaquatic reptiles that live throughout the tropics in Africa, Asia, the Americas and Australia. Crocodylinae, all of whose members are considered true crocodiles, is classified as a biological subfamily. A broader sense of the term crocodile, Crocodylidae that includes Tomistoma, is not used in this article. The term crocodile here applies to only the species within the subfamily of Crocodylinae. The term is sometimes used even more loosely to include all extant members of the order Crocodilia, which includes the alligators and caimans (family Alligatoridae), the gharial and false gharial (family Gavialidae), and all other living and fossil Crocodylomorpha. <br><br>(From <a href=\"https://en.wikipedia.org/wiki/Pear\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Crocodile_Feast_AdF.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "Panthera pardus",
+    "name": "Leopard",
+    "description": "The leopard is one of the five extant species in the genus Panthera, a member of the Felidae.It occurs in a wide range in sub-Saharan Africa, in small parts of Western and Central Asia, on the Indian subcontinent to Southeast and East Asia. It is listed as Vulnerable on the IUCN Red List because leopard populations are threatened by habitat loss and fragmentation, and are declining in large parts of the global range. In Hong Kong, Singapore, Kuwait, Syria, Libya, Tunisia and most likely in Morocco, leopard populations have already been extirpated. Contemporary records suggest that the leopard occurs in only 25% of its historical global range.[5][6].<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Leopard\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/African_Leopard_Near_Okevi_Waterhole_Etosha_Namibia.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "procyon-lotor",
+    "name": "Raccoon",
+    "description": "The raccoon is a medium-sized mammal native to North America. The raccoon is the largest of the procyonid family, having a body length of 40 to 70 cm (16 to 28 in) and a body weight of 5 to 26 kg (11 to 57 lb). Its grayish coat mostly consists of dense underfur which insulates it against cold weather. Three of the raccoon's most distinctive features are its extremely dexterous front paws, its facial mask, and its ringed tail, which are themes in the mythologies of the indigenous peoples of the Americas. Raccoons are noted for their intelligence, with studies showing that they are able to remember the solution to tasks for at least three years. They are usually nocturnal and omnivorous, eating about 40% invertebrates, 33% plants, and 27% vertebrates.<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Raccoon\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Racoon_clinging_to_a_tree.JPG",
+    "habitat": "Omnivorous"
+  },
+  {
+    "animalId": "hippopotamus amphibius",
+    "name": "Hippopotamus",
+    "description": "The hippopotamus, also called the common hippopotamus is a large, mostly herbivorous, semiaquatic mammal and ungulate native to sub-Saharan Africa. It is one of only two extant species in the family Hippopotamidae, the other being the pygmy hippopotamus (Choeropsis liberiensis or Hexaprotodon liberiensis). The name comes from the ancient Greek for \"river horse\" (ἱπποπόταμος). After the elephant and rhinoceros, both of which are found in Africa, the hippopotamus is the third-largest type of land mammal and the heaviest extant artiodactyl. Despite their physical resemblance to pigs and other terrestrial even-toed ungulates, the closest living relatives of the Hippopotamidae are cetaceans (whales, dolphins, porpoises, etc.) from which they diverged about 55 million years ago. <br><br>(From <a href=\"https://en.wikipedia.org/wiki/Mango\">Hippopotamus</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Hipop%C3%B3tamos_%28Hippopotamus_amphibius%29%2C_parque_nacional_de_Chobe%2C_Botsuana%2C_2018-07-28%2C_DD_79.jpg",
+    "habitat": "Omnivorous"
+  },
+  {
+    "animalId": "giraffa",
+    "name": "Giraffe",
+    "description": "The giraffe (Giraffa) is an African artiodactyl mammal, the tallest living terrestrial animal and the largest ruminant. It is traditionally considered to be one species, Giraffa camelopardalis, with nine subspecies. However, the existence of up to eight extant giraffe species has been described, based upon research into the mitochondrial and nuclear DNA, as well as morphological measurements of Giraffa. Seven other species are extinct, prehistoric species known from fossils. <br><br>(From <a href=\"https://en.wikipedia.org/wiki/Giraffe\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Giraffe_Ithala_KZN_South_Africa_Luca_Galuzzi_2004.JPG",
+    "habitat": "Herbivorous"
+  },
+  {
+    "animalId": "axis-axis",
+    "name": "Chital",
+    "description": "The chital, also known as spotted deer, chital deer, and axis deer, is a species of deer that is native in the Indian subcontinent. The species was first described by German naturalist Johann Christian Polycarp Erxleben in 1777. A moderate-sized deer, male chital reach nearly 90 cm (35 in) and females 70 cm (28 in) at the shoulder. While males weigh 30–75 kg (66–165 lb), the lighter females weigh 25–45 kg (55–99 lb). The species is sexually dimorphic; males are larger than females, and antlers are present only on males. The upper parts are golden to rufous, completely covered in white spots. The abdomen, rump, throat, insides of legs, ears, and tail are all white. The antlers, three-pronged, are nearly 1 m (3.3 ft) long. <br><br>(From <a href=\"https://en.wikipedia.org/wiki/Chital\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Chital_deer_pair_at_Nagarahole_wildlife_sanctuary.jpg",
+    "habitat": "Herbivorous"
+  },
+  {
+    "animalId": "acinonyx-jubatus",
+    "name": "Cheetah",
+    "description": "The cheetah (Acinonyx jubatus) is a large cat native to Africa and central Iran. It is the fastest land animal, capable of running at 80 to 128 km/h (50 to 80 mph), and as such has several adaptations for speed, including a light build, long thin legs and a long tail. Cheetahs typically reach 67–94 cm (26–37 in) at the shoulder, and the head-and-body length is between 1.1 and 1.5 m (3.6 and 4.9 ft). Adults typically weigh between 20 and 65 kg (44 and 143 lb). Its head is small, rounded, and has a short snout and black tear-like facial streaks. The coat is typically tawny to creamy white or pale buff and is mostly covered with evenly spaced, solid black spots. Four subspecies are recognised. <br><br>(From <a href=\"https://en.wikipedia.org/wiki/Cheetah\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/36/Cheetah_%28Acinonyx_jubatus%29_female_2.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "ursidae",
+    "name": "Bear",
+    "description": "Bears are carnivoran mammals of the family Ursidae. They are classified as caniforms, or doglike carnivorans. Although only eight species of bears are extant, they are widespread, appearing in a wide variety of habitats throughout the Northern Hemisphere and partially in the Southern Hemisphere. Bears are found on the continents of North America, South America, Europe, and Asia. Common characteristics of modern bears include large bodies with stocky legs, long snouts, small rounded ears, shaggy hair, plantigrade paws with five nonretractile claws, and short tails. .<br><br>While the polar bear is mostly carnivorous, and the giant panda feeds almost entirely on bamboo, the remaining six species are omnivorous with varied diets. With the exception of courting individuals and mothers with their young, bears are typically solitary animals. They may be diurnal or nocturnal and have an excellent sense of smell. Despite their heavy build and awkward gait, they are adept runners, climbers, and swimmers. Bears use shelters, such as caves and logs, as their dens; most species occupy their dens during the winter for a long period of hibernation, up to 100 days.<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Bear\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Grizzly_Bear_%28Ursus_arctos_ssp.%29.jpg",
+    "habitat": "Omnivorous"
+  },
+  {
+    "animalId": "panthera-onca",
+    "name": "Jaguar",
+    "description": "The jaguar is a large felid species and the only extant member of the genus Panthera native to the Americas. The jaguar's present range extends from Southwestern United States and Mexico in North America, across much of Central America, and south to Paraguay and northern Argentina in South America. Though there are single cats now living within the Western United States, the species has largely been extirpated from the United States since the early 20th century. It is listed as Near Threatened on the IUCN Red List; and its numbers are declining. Threats include loss and fragmentation of habitat. .<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Cypripedium_reginae\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Jaguar_%28Panthera_onca_palustris%29_male_Rio_Negro_2.JPG",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "crocuta crocuta",
+    "name": "Hyena",
+    "description": "Hyenas or hyaenas (from Ancient Greek ὕαινα, hýaina[1]) are feliform carnivoran mammals of the family Hyaenidae /haɪˈɛnɪdiː/. With only four extant species (in three genera), it is the fifth-smallest biological family in the Carnivora, and one of the smallest in the class Mammalia.Despite their low diversity, hyenas are unique and vital components of most African ecosystems.Spotted hyenas may kill as many as 95% of the animals they eat,[5] while striped hyenas are largely scavengers.[6] Generally, hyenas are known to drive off larger predators, like lions, from their kills, despite having a reputation in popular culture for being cowardly.[6] Hyenas are primarily nocturnal animals, but sometimes venture from their lairs in the early-morning hours. With the exception of the highly social spotted hyena, hyenas are generally not gregarious animals, though they may live in family groups and congregate at kills.[7] <br><br>(From <a href=\"https://en.wikipedia.org/wiki/Hyena\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Spotted_hyena_%28Crocuta_crocuta%29.jpg",
+    "habitat": "Carnivorous"
+  },
+  {
+    "animalId": "lexodonta",
+    "name": "Elephant",
+    "description": "Elephants are mammals of the family Elephantidae and the largest existing land animals. Three species are currently recognised: the African bush elephant, the African forest elephant, and the Asian elephant. Elephantidae is the only surviving family of the order Proboscidea; extinct members include the mastodons. The family Elephantidae also contains several now-extinct groups, including the mammoths and straight-tusked elephants. African elephants have larger ears and concave backs, whereas Asian elephants have smaller ears, and convex or level backs. Distinctive features of all elephants include a long trunk, tusks, large ear flaps, massive legs, and tough but sensitive skin. The trunk, also called a proboscis, is used for breathing, bringing food and water to the mouth, and grasping objects. Tusks, which are derived from the incisor teeth, serve both as weapons and as tools for moving objects and digging. The large ear flaps assist in maintaining a constant body temperature as well as in communication. The pillar-like legs carry their great weight. .<br><br>(From <a href=\"https://en.wikipedia.org/wiki/Elephant\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg",
+    "habitat": "Herbivorous"
+  },
+  {
+    "animalId": "rhinocerotidae",
+    "name": "Rhinoceros",
+    "description": "A rhinoceros (/raɪˈnɒsərəs/, from Greek rhinokerōs, meaning 'nose-horned', from rhis, meaning 'nose', and keras, meaning 'horn'), commonly abbreviated to rhino, is one of any five extant species of odd-toed ungulates in the family Rhinocerotidae, as well as any of the numerous extinct species therein. Two of the extant species are native to Africa, and three to Southern Asia. The term \"rhinoceros\" is often more broadly applied to now extinct species of the superfamily Rhinocerotoidea. .<br><br><br>(From <a href=\\\"https://en.wikipedia.org/wiki/Rhinoceros\\\">Wikipedia</a>)",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Indian_rhinoceros_%28Rhinoceros_unicornis%29_4.jpg",
+    "habitat": "Herbivorous"
+  }
+]

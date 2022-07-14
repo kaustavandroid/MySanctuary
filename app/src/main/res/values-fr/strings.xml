@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a11y_animal_item_image">Image d\'animaux</string>
+    <string name="my_sanctuary_title">Mon sanctuaire</string>
+    <string name="animal_list_title">Liste des animaux</string>
+    <string name="menu_item_share_animal">Partager</string>
+    <string name="menu_filter_by_habitat">Filtrer par habitat</string>
+    <string name="sanctuary_empty">Votre sanctuaire est vide</string>
+    <string name="add_animal">Ajouter un animal</string>
+    <string name="plant_detail_image_content_description">Image d\'une plante</string>
+    <string name="animal_habitat">Habitat: %s</string>
+    <string name="share_text_animal">"  Découvrez l'animal %s dans My Sanctuary"</string>
+</resources>

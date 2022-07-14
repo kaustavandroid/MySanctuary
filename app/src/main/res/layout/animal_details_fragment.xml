@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="animal"
+            type="com.kgandroid.mysanctuary.data.Animal"/>
+
+        <variable
+            name="fabListener"
+            type="com.kgandroid.mysanctuary.view.AnimalDetailsFragment" />
+
+        <variable
+            name="animalDetailsViewmodel"
+            type="com.kgandroid.mysanctuary.viewmodel.AnimalDetailsViewModel" />
+
+        <variable
+            name="isAnimalAdded"
+            type="boolean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/plant_detail_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/fab_bottom_padding"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="278dp"
+                android:contentDescription="@string/plant_detail_image_content_description"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:imageFromUrl="@{animal.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/animal_detail_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:text="@{animal.name}"
+                android:gravity="center_horizontal"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detail_image" />
+
+            <TextView
+                android:id="@+id/animal_habitat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:gravity="center_horizontal"
+                android:text="@{@string/animal_habitat(animal.habitat)}"
+                android:textColor="?attr/colorAccent"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animal_detail_name" />
+
+            <TextView
+                android:id="@+id/animal_scientific_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:text="@{animal.animalId}"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animal_habitat"
+                tools:text="every 7 days" />
+
+
+            <TextView
+                android:id="@+id/animal_description"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:minHeight="555dp"
+                android:text="@{animal.description}"
+                app:renderHtml="@{animal.description}"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/animal_scientific_name"
+                tools:text="Details about the plant" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:clickable="true"
+                android:tint="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/animal_detail_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_anchorGravity="bottom|end"
+                android:onClick="@{() -> animalDetailsViewmodel.updateIsIncluded(true , animal.animalId)}"
+                app:shapeAppearance="@style/ShapeAppearance.Sanctury.FAB"
+                app:layout_constraintStart_toEndOf="@+id/detail_image"
+                app:isGone="@{animal.isIncluded}"
+                app:srcCompat="@drawable/ic_plus" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

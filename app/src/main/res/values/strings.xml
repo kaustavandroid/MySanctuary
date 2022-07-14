@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">MySanctuary</string>
+    <!-- Accessibility -->
+    <string name="a11y_animal_item_image" translation_description="Accessibility text for each of the plant images shown in the 'My garden' and 'Plant list' screens.">Picture of animals Kaustav</string>
+    <string name="my_sanctuary_title" translation_description="Title for the 'My garden' screen where the user can see the list of plants that have been added to their garden.">My Sanctuary</string>
+    <string name="animal_list_title" translation_description="Title for the plant list screen where the user can see a list of plants available to add to their garden.">Animal list</string>
+
+    <string name="menu_item_share_animal" translation_description="The label for the Share menu item">Share</string>
+    <string name="menu_filter_by_habitat" translation_description="The label for the menu item to filter the displayed animals by habitat.">Filter by habitat</string>
+    <string name="sanctuary_empty" translation_description="Text that is shown on the 'My Garden' screen when no plants have been added to the user's garden">Your sanctuary is empty</string>
+    <string name="add_animal" translation_description="Button text that prompts user to navigate to the Plant List to add plants to their empty garden.">Add Animal</string>
+
+    <string name="plant_detail_image_content_description" translation_description="Content description for the header / hero image that is show at the top of the plant detail screen.">Image of plant</string>
+
+    <string name="animal_habitat">Habitat: %s</string>
+
+    <string name="share_text_animal" translation_description="The default messaged used when sharing a animal on SNS, etc.">Check out the %s animal in the My Sanctuary</string>
+
+</resources>
