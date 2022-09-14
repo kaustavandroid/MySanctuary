@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.kgandroid.mysanctuary.data.AppDatabase
@@ -18,20 +20,21 @@ import com.kgandroid.mysanctuary.databinding.FragmentAllAnimalBinding
 import com.kgandroid.mysanctuary.viewmodel.AnimalViewModel
 import com.kgandroid.mysanctuary.viewmodel.AnimalViewModelFactory
 
-class AllAnimalsFragment : Fragment() , AnimalClickListener{
+class AllAnimalsFragment : Fragment(), AnimalClickListener {
 
-    private lateinit var dataBinding : FragmentAllAnimalBinding
+    private lateinit var dataBinding: FragmentAllAnimalBinding
     private val animalListAdapter =
         AnimalListAdapter(arrayListOf())
+
     //private val viewModel: WordViewModel by viewModels()
     private lateinit var animalViewModel: AnimalViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        setHasOptionsMenu(true)
-        dataBinding = DataBindingUtil.inflate(inflater , R.layout.fragment_all_animal , container ,false)
+    ): View {
+        dataBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_all_animal, container, false)
         return dataBinding.root
     }
 
@@ -41,7 +44,7 @@ class AllAnimalsFragment : Fragment() , AnimalClickListener{
         val dao = AppDatabase.getInstance(requireContext()).animalDao()
         val repository = AnimalRepository(dao)
         val factory = AnimalViewModelFactory(repository)
-        animalViewModel = ViewModelProvider(this,factory).get(AnimalViewModel::class.java)
+        animalViewModel = ViewModelProvider(this, factory)[AnimalViewModel::class.java]
 
         animalViewModel.allAnimal
 
@@ -50,64 +53,74 @@ class AllAnimalsFragment : Fragment() , AnimalClickListener{
         }
 
         observeAndLoadAllAnimals()
+        initMenuItems()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_animal_list, menu)
-        super.onCreateOptionsMenu(menu, inflater)
+    private fun initMenuItems() {
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                // Add menu items here
+                menuInflater.inflate(R.menu.menu_animal_list, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                // Handle the menu selection
+                return when (menuItem.itemId) {
+                    R.id.all_animals -> {
+                        observeAndLoadAllAnimals()
+                        true
+                    }
+                    R.id.animal_herbivorous -> {
+                        observeAndLoadAnimalsByHabitat("Herbivorous")
+                        true
+                    }
+                    R.id.animal_carnivorous -> {
+                        observeAndLoadAnimalsByHabitat("Carnivorous")
+                        true
+                    }
+                    R.id.animal_omnivorous -> {
+                        observeAndLoadAnimalsByHabitat("Omnivorous")
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.all_animals -> {
-                observeAndLoadAllAnimals()
-                true
-            }
-            R.id.animal_herbivorous -> {
-                observeAndloadAnimalsByHabitat("Herbivorous")
-                true
-            }
-            R.id.animal_carnivorous -> {
-                observeAndloadAnimalsByHabitat("Carnivorous")
-                true
-            }
-            R.id.animal_omnivorous -> {
-                observeAndloadAnimalsByHabitat("Omnivorous")
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-    override fun onclickAnimal(view : View, animal: Animal) {
-        Toast.makeText(context, "Word Selected " + animal.name, Toast.LENGTH_LONG).show()
-        val action  = AnimalTabHostFragmentDirections.actionAnimalTabHostFragmentToAnimalDetailsFragment(animal.animalId)
-        Navigation.findNavController(view).navigate(action)
+    override fun onclickAnimal(v: View, word: Animal) {
+        Toast.makeText(context, "Word Selected " + word.name, Toast.LENGTH_LONG).show()
+        val action =
+            AnimalTabHostFragmentDirections.actionAnimalTabHostFragmentToAnimalDetailsFragment(
+                word.animalId
+            )
+        Navigation.findNavController(v).navigate(action)
     }
 
-    private fun observeAndloadAnimalsByHabitat(habitat : String){
-        animalViewModel.getAnimalByHabitat(habitat).observe(viewLifecycleOwner, Observer {
+    private fun observeAndLoadAnimalsByHabitat(habitat: String) {
+        animalViewModel.getAnimalByHabitat(habitat).observe(viewLifecycleOwner) {
             if (it != null) {
                 val size = it.size
-                for (i in 0..size-1) {
-                    Log.i("ListItems", "$i --> " + it.get(i).name+" -->" + it.get(i).animalId)
+                for (i in 0 until size) {
+                    Log.i("ListItems", "$i --> " + it[i].name + " -->" + it[i].animalId)
                 }
-                animalListAdapter.updateAnimalList(it , this)
+                animalListAdapter.updateAnimalList(it, this)
             }
-        })
+        }
     }
 
-    private fun observeAndLoadAllAnimals(){
-        animalViewModel.allAnimal.observe(viewLifecycleOwner, Observer {
+    private fun observeAndLoadAllAnimals() {
+        animalViewModel.allAnimal.observe(viewLifecycleOwner) {
             dataBinding.hasAnimals = !it.isNullOrEmpty()
             if (it != null) {
                 val size = it.size
-                for (i in 0..size-1) {
-                    Log.i("ListItems", "$i --> " + it.get(i).name+" -->" + it.get(i).animalId)
+                for (i in 0 until size) {
+                    Log.i("ListItems", "$i --> " + it[i].name + " -->" + it[i].animalId)
                 }
-                animalListAdapter.updateAnimalList(it , this)
+                animalListAdapter.updateAnimalList(it, this)
             }
-        })
+        }
     }
 }
 

@@ -4,35 +4,33 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.kgandroid.mysanctuary.R
-
+import com.kgandroid.mysanctuary.databinding.FragmentAnimalTabLayoutBinding
 import com.kgandroid.mysanctuary.utilities.ANIMAL_LIST_PAGE_INDEX
 import com.kgandroid.mysanctuary.utilities.AnimalPagerAdapter
 import com.kgandroid.mysanctuary.utilities.MY_SANCTUARY_PAGE_INDEX
-import kotlinx.android.synthetic.main.fragment_animal_tab_layout.*
 
 class AnimalTabHostFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var dataBinding: FragmentAnimalTabLayoutBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_animal_tab_layout, container, false)
+    ): View {
+        dataBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_animal_tab_layout, container, false)
+        return dataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewpagerAnimal.adapter = AnimalPagerAdapter(this)
+        dataBinding.viewpagerAnimal.adapter = AnimalPagerAdapter(this)
 
         // Set the icon and text for each tab
-        TabLayoutMediator(tabs, viewpagerAnimal) { tab, position ->
+        TabLayoutMediator(dataBinding.tabs, dataBinding.viewpagerAnimal) { tab, position ->
             tab.setIcon(getTabIcon(position))
             tab.text = getTabTitle(position)
         }.attach()

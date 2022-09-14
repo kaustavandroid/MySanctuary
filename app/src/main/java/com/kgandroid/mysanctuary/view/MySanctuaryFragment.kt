@@ -19,20 +19,21 @@ import com.kgandroid.mysanctuary.utilities.ANIMAL_LIST_PAGE_INDEX
 import com.kgandroid.mysanctuary.viewmodel.AnimalViewModel
 import com.kgandroid.mysanctuary.viewmodel.AnimalViewModelFactory
 
-class MySanctuaryFragment : Fragment() , AnimalClickListener{
+class MySanctuaryFragment : Fragment(), AnimalClickListener {
 
-    private lateinit var dataBinding : FragmentAllAnimalBinding
+    private lateinit var dataBinding: FragmentAllAnimalBinding
     private val animalListAdapter =
         AnimalListAdapter(arrayListOf())
+
     //private val viewModel: WordViewModel by viewModels()
     private lateinit var animalViewModel: AnimalViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        setHasOptionsMenu(true)
-        dataBinding = DataBindingUtil.inflate(inflater , R.layout.fragment_all_animal , container ,false)
+    ): View {
+        dataBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_all_animal, container, false)
         return dataBinding.root
     }
 
@@ -44,7 +45,7 @@ class MySanctuaryFragment : Fragment() , AnimalClickListener{
         val dao = AppDatabase.getInstance(requireContext()).animalDao()
         val repository = AnimalRepository(dao)
         val factory = AnimalViewModelFactory(repository)
-        animalViewModel = ViewModelProvider(this,factory).get(AnimalViewModel::class.java)
+        animalViewModel = ViewModelProvider(this, factory).get(AnimalViewModel::class.java)
 
         dataBinding.recyclerViewAnimal.apply {
             dataBinding.recyclerViewAnimal.adapter = animalListAdapter
@@ -53,20 +54,23 @@ class MySanctuaryFragment : Fragment() , AnimalClickListener{
         observeAndLoadAllAnimals()
     }
 
-    override fun onclickAnimal(view : View, animal: Animal) {
+    override fun onclickAnimal(view: View, animal: Animal) {
         Toast.makeText(context, "Animal Selected " + animal.name, Toast.LENGTH_LONG).show()
-        val action  = AnimalTabHostFragmentDirections.actionAnimalTabHostFragmentToAnimalDetailsFragment(animal.animalId)
+        val action =
+            AnimalTabHostFragmentDirections.actionAnimalTabHostFragmentToAnimalDetailsFragment(
+                animal.animalId
+            )
         Navigation.findNavController(view).navigate(action)
     }
 
-    private fun observeAndLoadAllAnimals(){
-        animalViewModel.getAnimalInSanctuary(isIncluded = true).observe(viewLifecycleOwner, Observer {
-                dataBinding.hasAnimals = !it.isNullOrEmpty()
-                animalListAdapter.updateAnimalList(it , this)
-        })
+    private fun observeAndLoadAllAnimals() {
+        animalViewModel.getAnimalInSanctuary(isIncluded = true).observe(viewLifecycleOwner) {
+            dataBinding.hasAnimals = !it.isNullOrEmpty()
+            animalListAdapter.updateAnimalList(it, this)
+        }
     }
 
-     fun navigateToPlantListPage() {
+    fun navigateToPlantListPage() {
         requireActivity().findViewById<ViewPager2>(R.id.viewpagerAnimal).currentItem =
             ANIMAL_LIST_PAGE_INDEX
     }

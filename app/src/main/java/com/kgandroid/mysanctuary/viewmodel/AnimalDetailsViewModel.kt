@@ -10,19 +10,22 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.*
 
-class AnimalDetailsViewModel(private val repository: AnimalRepository , private val animalId: String)  : ViewModel() {
+class AnimalDetailsViewModel(
+    private val repository: AnimalRepository,
+    private val animalId: String
+) : ViewModel() {
 
     var updateRowIdMutableLiveData = MutableLiveData<Int?>()
-    val updateRowIdLiveData : LiveData<Int?>
+    val updateRowIdLiveData: LiveData<Int?>
         get() = updateRowIdMutableLiveData
-
 
     val animalDetailsLiveData = repository.getAnimalById(animalId)
 
-    fun updateIsIncluded(isIncluded: Boolean , animalId: String) = viewModelScope.launch(Dispatchers.IO) {
-        val updateRowId = repository.updateIsIncluded(isIncluded , animalId)
-        updateRowIdMutableLiveData.postValue(updateRowId)
-        Log.d("UpdateId" , updateRowId.toString())
-    }
+    fun updateIsIncluded(isIncluded: Boolean, animalId: String) =
+        viewModelScope.launch(Dispatchers.IO) {
+            val updateRowId = repository.updateIsIncluded(isIncluded, animalId)
+            updateRowIdMutableLiveData.postValue(updateRowId)
+            Log.d("UpdateId", updateRowId.toString())
+        }
 
 }

@@ -6,9 +6,11 @@ import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.core.app.ShareCompat
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.kgandroid.mysanctuary.data.AppDatabase
@@ -19,51 +21,52 @@ import com.kgandroid.mysanctuary.viewmodel.AnimalDetailsViewModel
 import com.kgandroid.mysanctuary.viewmodel.AnimalDetailsViewModelFactory
 
 class AnimalDetailsFragment : Fragment() {
-    private lateinit var dataBinding : AnimalDetailsFragmentBinding
+    private lateinit var dataBinding: AnimalDetailsFragmentBinding
     private val args: AnimalDetailsFragmentArgs by navArgs()
     private lateinit var animalDetailsViewModel: AnimalDetailsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        setHasOptionsMenu(true)
-        dataBinding = DataBindingUtil.inflate(inflater , R.layout.animal_details_fragment , container ,false)
+    ): View {
+        dataBinding =
+            DataBindingUtil.inflate(inflater, R.layout.animal_details_fragment, container, false)
         return dataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("Animal Id" , args.animalId )
+        Log.d("Animal Id", args.animalId)
         val dao = AppDatabase.getInstance(requireContext()).animalDao()
         val repository = AnimalRepository(dao)
-        val factory = AnimalDetailsViewModelFactory(repository , args.animalId)
-        animalDetailsViewModel = ViewModelProvider(this,factory).get(AnimalDetailsViewModel::class.java)
+        val factory = AnimalDetailsViewModelFactory(repository, args.animalId)
+        animalDetailsViewModel =
+            ViewModelProvider(this, factory).get(AnimalDetailsViewModel::class.java)
 
         dataBinding.isAnimalAdded = false
         dataBinding.fabListener = this
         dataBinding.animalDetailsViewmodel = animalDetailsViewModel
-        observeAndloadAnimalDetails()
+        observeAndLoadAnimalDetails()
         observeMySanctuary()
-    }
-
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_animal_detail, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_share -> {
-                createShareIntent()
-                true
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                // Add menu items here
+                menuInflater.inflate(R.menu.menu_animal_detail, menu)
             }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                // Handle the menu selection
+                return when (menuItem.itemId) {
+                    R.id.action_share -> {
+                        createShareIntent()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+    }
 
     // Helper function for calling a share functionality.
     // Should be used when user presses a share button/menu item.
@@ -85,27 +88,27 @@ class AnimalDetailsFragment : Fragment() {
     }
 
 
-    private fun observeAndloadAnimalDetails(){
-        animalDetailsViewModel.animalDetailsLiveData.observe(viewLifecycleOwner, Observer {
+    private fun observeAndLoadAnimalDetails() {
+        animalDetailsViewModel.animalDetailsLiveData.observe(viewLifecycleOwner) {
             if (it != null) {
-                Log.d("Update id-->" , it.animalId)
-                Log.d("Update word-->" , it.name)
-                Log.d("Update meaning-->" , it.imageUrl)
-                Log.d("Update date-->" , it.description)
-                dataBinding.animal= it
-                //
+                Log.d("Update id-->", it.animalId)
+                Log.d("Update word-->", it.name)
+                Log.d("Update meaning-->", it.imageUrl)
+                Log.d("Update date-->", it.description)
+                dataBinding.animal = it
             }
-        })
+        }
     }
 
-    private fun observeMySanctuary(){
-        animalDetailsViewModel.updateRowIdLiveData.observe(viewLifecycleOwner, Observer {
+    private fun observeMySanctuary() {
+        animalDetailsViewModel.updateRowIdLiveData.observe(viewLifecycleOwner) {
             if (it != null) {
                 if (it >= 1) {
                     dataBinding.isAnimalAdded = true
-                    Toast.makeText(context, "Animal added to your sanctuary", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Animal added to your sanctuary", Toast.LENGTH_LONG)
+                        .show()
                 }
             }
-        })
+        }
     }
 }
