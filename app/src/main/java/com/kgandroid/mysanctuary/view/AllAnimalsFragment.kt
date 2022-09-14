@@ -26,7 +26,6 @@ class AllAnimalsFragment : Fragment(), AnimalClickListener {
     private val animalListAdapter =
         AnimalListAdapter(arrayListOf())
 
-    //private val viewModel: WordViewModel by viewModels()
     private lateinit var animalViewModel: AnimalViewModel
 
     override fun onCreateView(

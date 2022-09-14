@@ -6,11 +6,7 @@ import com.kgandroid.mysanctuary.data.Animal
 import com.kgandroid.mysanctuary.data.AnimalRepository
 
 class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
-    val allAnimal: LiveData<List<Animal>>
-
-    init {
-        allAnimal = repository.allAnimal
-    }
+    val allAnimal: LiveData<List<Animal>> = repository.allAnimal
 
     fun getAnimalByHabitat(habitat: String): LiveData<List<Animal>> {
         return repository.getAnimalByHabitat(habitat)
@@ -19,5 +15,4 @@ class AnimalViewModel(private val repository: AnimalRepository) : ViewModel() {
     fun getAnimalInSanctuary(isIncluded: Boolean): LiveData<List<Animal>> {
         return repository.getAnimalInSanctuary(isIncluded)
     }
-
 }
